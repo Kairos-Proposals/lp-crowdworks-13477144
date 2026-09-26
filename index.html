@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairos ご提案 | アパレルOEM会社様 コーポレートサイト制作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Shippori+Mincho+B1:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --canvas:#F3EEE3;
+    --canvas-deep:#E9E1D2;
+    --charcoal:#2A2B2E;
+    --indigo:#2E3A54;
+    --indigo-deep:#212B3F;
+    --stitch:#B4463B;
+    --brass:#C39A56;
+    --fog:#8B8579;
+    --white:#FBF8F2;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px),
+      var(--canvas);
+    color:var(--charcoal);
+    font-family:'Noto Sans JP', sans-serif;
+    font-weight:400;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.serif{
+    font-family:'Shippori Mincho B1', serif;
+  }
+
+  .eng{
+    font-family:'Cormorant Garamond', serif;
+    letter-spacing:0.12em;
+  }
+
+  .container{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- ボタン(飾り)モチーフ ---------- */
+  .btn-deco{
+    width:14px;height:14px;border-radius:50%;
+    background:
+      radial-gradient(circle at 35% 30%, #E8CE94, var(--brass) 55%, #9C7A3A 100%);
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,0.25);
+    position:relative;
+    display:inline-block;
+  }
+  .btn-deco::before{
+    content:'';
+    position:absolute;
+    top:50%;left:50%;
+    width:6px;height:6px;
+    transform:translate(-50%,-50%);
+    background:
+      radial-gradient(circle at 30% 30%, #4d3a1c 0 1px, transparent 1.2px) top left/3px 3px no-repeat,
+      radial-gradient(circle at 30% 30%, #4d3a1c 0 1px, transparent 1.2px) top right/3px 3px no-repeat,
+      radial-gradient(circle at 30% 30%, #4d3a1c 0 1px, transparent 1.2px) bottom left/3px 3px no-repeat,
+      radial-gradient(circle at 30% 30%, #4d3a1c 0 1px, transparent 1.2px) bottom right/3px 3px no-repeat;
+  }
+
+  .stitch-divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    padding:18px 0;
+  }
+  .stitch-divider .line{
+    flex:1;
+    max-width:220px;
+    border-top:2px dashed var(--brass);
+    opacity:0.6;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    padding:34px 0 10px;
+    text-align:center;
+  }
+  .brand{
+    font-size:1.6rem;
+    color:var(--indigo);
+    font-weight:600;
+  }
+  .brand span{color:var(--stitch);}
+  .brand-sub{
+    font-size:0.72rem;
+    color:var(--fog);
+    letter-spacing:0.3em;
+    margin-top:4px;
+    text-transform:uppercase;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:70px 0 90px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    top:-120px;right:-140px;
+    width:420px;height:420px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, rgba(46,58,84,0.10), rgba(46,58,84,0) 65%);
+  }
+  .hero::after{
+    content:'';
+    position:absolute;
+    bottom:-160px;left:-160px;
+    width:380px;height:380px;
+    border-radius:50%;
+    background:radial-gradient(circle at 60% 40%, rgba(180,70,59,0.08), rgba(180,70,59,0) 65%);
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    max-width:780px;
+    margin:0 auto;
+  }
+  .tag-line{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--white);
+    border:1px solid rgba(46,58,84,0.15);
+    padding:8px 20px;
+    border-radius:999px;
+    font-size:0.78rem;
+    letter-spacing:0.15em;
+    color:var(--indigo);
+    margin-bottom:36px;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 5vw, 3.2rem);
+    color:var(--indigo-deep);
+    font-weight:800;
+    line-height:1.55;
+    margin-bottom:26px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--stitch);
+    position:relative;
+  }
+  .hero p.lead{
+    font-size:1rem;
+    color:var(--charcoal);
+    opacity:0.85;
+    max-width:560px;
+    margin:0 auto;
+  }
+
+  .fabric-swatch{
+    margin-top:56px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+  }
+  .swatch{
+    width:42px;height:56px;
+    border-radius:3px;
+    position:relative;
+    box-shadow:0 6px 14px rgba(0,0,0,0.12);
+  }
+  .swatch::after{
+    content:'';
+    position:absolute;inset:4px;
+    border:1px dashed rgba(255,255,255,0.5);
+  }
+  .swatch.c1{background:var(--indigo);}
+  .swatch.c2{background:var(--stitch);}
+  .swatch.c3{background:var(--brass);}
+  .swatch.c4{background:var(--fog);}
+  .swatch.c5{background:var(--charcoal);}
+
+  /* ---------- SECTION 共通 ---------- */
+  section{
+    padding:80px 0;
+  }
+  .section-head{
+    text-align:center;
+    max-width:680px;
+    margin:0 auto 56px;
+  }
+  .section-label{
+    font-size:0.75rem;
+    letter-spacing:0.28em;
+    color:var(--stitch);
+    text-transform:uppercase;
+    margin-bottom:14px;
+    display:block;
+  }
+  .section-head h2{
+    font-size:clamp(1.5rem, 3.2vw, 2.1rem);
+    color:var(--indigo-deep);
+    line-height:1.6;
+  }
+  .section-head p{
+    margin-top:18px;
+    color:var(--fog);
+    font-size:0.95rem;
+  }
+
+  /* ---------- UNDERSTANDING ---------- */
+  .understand{
+    background:var(--indigo-deep);
+    color:var(--canvas);
+    position:relative;
+  }
+  .understand::before{
+    content:'';
+    position:absolute; inset:0;
+    background:
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 14px);
+    pointer-events:none;
+  }
+  .understand .section-head h2{color:var(--white);}
+  .understand-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:32px;
+    position:relative;
+    z-index:1;
+  }
+  .understand-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.14);
+    padding:32px 26px;
+    border-radius:2px;
+  }
+  .understand-card .num{
+    font-family:'Cormorant Garamond', serif;
+    font-size:2.1rem;
+    color:var(--brass);
+    display:block;
+    margin-bottom:12px;
+  }
+  .understand-card h3{
+    font-size:1.05rem;
+    margin-bottom:10px;
+    color:var(--white);
+    font-weight:600;
+  }
+  .understand-card p{
+    font-size:0.88rem;
+    color:rgba(243,238,227,0.75);
+  }
+
+  /* ---------- VALUE CARDS (型紙風) ---------- */
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+  }
+  .value-card{
+    background:var(--white);
+    padding:34px 28px 30px;
+    position:relative;
+    border:1px solid rgba(46,58,84,0.14);
+    clip-path:polygon(
+      0 12px, 12px 0,
+      calc(100% - 12px) 0, 100% 12px,
+      100% calc(100% - 12px), calc(100% - 12px) 100%,
+      12px 100%, 0 calc(100% - 12px)
+    );
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .value-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 16px 30px rgba(46,58,84,0.14);
+  }
+  .value-card .idx{
+    font-family:'Cormorant Garamond', serif;
+    font-size:0.85rem;
+    letter-spacing:0.2em;
+    color:var(--stitch);
+    display:block;
+    margin-bottom:14px;
+  }
+  .value-card h3{
+    font-size:1.08rem;
+    color:var(--indigo-deep);
+    margin-bottom:12px;
+    font-weight:600;
+  }
+  .value-card p{
+    font-size:0.87rem;
+    color:var(--fog);
+  }
+  .value-card.wide{grid-column:span 1;}
+
+  /* ---------- PAGES CHIP ---------- */
+  .pages-wrap{
+    background:var(--canvas-deep);
+    border-top:1px dashed var(--brass);
+    border-bottom:1px dashed var(--brass);
+  }
+  .chip-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+  }
+  .chip{
+    background:var(--white);
+    border:1px solid var(--indigo);
+    color:var(--indigo-deep);
+    padding:9px 20px;
+    border-radius:999px;
+    font-size:0.85rem;
+    letter-spacing:0.03em;
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process-line{
+    position:relative;
+    margin-top:20px;
+  }
+  .process-list{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:18px;
+  }
+  .process-item{
+    background:var(--white);
+    border:1px solid rgba(46,58,84,0.15);
+    border-radius:6px;
+    padding:22px 16px;
+    text-align:center;
+    position:relative;
+  }
+  .process-item::before{
+    content:'';
+    position:absolute;
+    top:-9px; left:50%;
+    transform:translateX(-50%);
+    width:16px;height:16px;border-radius:50%;
+    background:var(--stitch);
+    box-shadow:0 0 0 4px var(--canvas);
+  }
+  .process-item .step{
+    font-family:'Cormorant Garamond', serif;
+    font-size:0.75rem;
+    letter-spacing:0.2em;
+    color:var(--stitch);
+    display:block;
+    margin-bottom:10px;
+  }
+  .process-item h4{
+    font-size:0.92rem;
+    color:var(--indigo-deep);
+    margin-bottom:8px;
+    font-weight:600;
+  }
+  .process-item p{
+    font-size:0.76rem;
+    color:var(--fog);
+  }
+
+  /* ---------- CLOSING ---------- */
+  .closing{
+    background:
+      linear-gradient(160deg, var(--indigo) 0%, var(--indigo-deep) 100%);
+    color:var(--canvas);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .closing::before{
+    content:'';
+    position:absolute;
+    width:600px;height:600px;
+    border-radius:50%;
+    border:1px dashed rgba(195,154,86,0.35);
+    top:-260px; left:50%;
+    transform:translateX(-50%);
+  }
+  .closing-inner{position:relative; z-index:1;}
+  .closing h2{
+    color:var(--white);
+    font-size:clamp(1.5rem,3.4vw,2.2rem);
+    margin-bottom:20px;
+  }
+  .closing p{
+    color:rgba(243,238,227,0.8);
+    max-width:560px;
+    margin:0 auto 40px;
+    font-size:0.95rem;
+  }
+  .cta-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:var(--stitch);
+    color:var(--white);
+    padding:16px 40px;
+    border-radius:999px;
+    font-size:0.98rem;
+    letter-spacing:0.06em;
+    font-weight:500;
+    box-shadow:0 10px 26px rgba(180,70,59,0.35);
+  }
+
+  footer{
+    text-align:center;
+    padding:30px 0;
+    font-size:0.75rem;
+    color:var(--fog);
+    letter-spacing:0.08em;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:860px){
+    .understand-grid{grid-template-columns:1fr;}
+    .value-grid{grid-template-columns:repeat(2,1fr);}
+    .process-list{grid-template-columns:repeat(3,1fr);}
+  }
+  @media (max-width:560px){
+    .value-grid{grid-template-columns:1fr;}
+    .process-list{grid-template-columns:1fr 1fr;}
+    section{padding:60px 0;}
+    .hero{padding:50px 0 60px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand"><span class="eng">Kairos</span></div>
+  <div class="brand-sub">Web Production Proposal</div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="tag-line"><span class="btn-deco"></span> Kairosより　ご提案書</span>
+    <h1>仕立てるのは、<br><em>信頼</em>という生地。</h1>
+    <p class="lead">
+      渋谷を拠点にものづくりを支えるアパレルOEM企業様へ。<br>
+      取引先に「任せて安心」と思っていただける、会社らしさの伝わるコーポレートサイトを、<br>
+      一枚ずつ丁寧に仕立てるように制作いたします。
+    </p>
+    <div class="fabric-swatch">
+      <div class="swatch c1"></div>
+      <div class="swatch c2"></div>
+      <div class="swatch c3"></div>
+      <div class="swatch c4"></div>
+      <div class="swatch c5"></div>
+    </div>
+  </div>
+</section>
+
+<div class="stitch-divider">
+  <div class="line"></div><span class="btn-deco"></span><div class="line"></div>
+</div>
+
+<section class="understand">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Understanding</span>
+      <h2>このご依頼、私たちはこう読み解きました</h2>
+      <p>ページ数の多さより「伝わること」を優先したいという、ものづくり企業様ならではのご要望に寄り添います。</p>
+    </div>
+    <div class="understand-grid">
+      <div class="understand-card">
+        <span class="num">01</span>
+        <h3>toB取引先への第一印象</h3>
+        <p>ターゲットはアパレル企業のご担当者様。派手さよりも「信頼できる工場・パートナー」という印象を丁寧に積み上げる設計が必要です。</p>
+      </div>
+      <div class="understand-card">
+        <span class="num">02</span>
+        <h3>WordPress／WIXの選定</h3>
+        <p>「自社で更新できるか」「独自ドメインと連結できるか」を軸に、貴社の運用体制に合った最適な選択肢をご提案します。</p>
+      </div>
+      <div class="understand-card">
+        <span class="num">03</span>
+        <h3>納期と品質のバランス</h3>
+        <p>10月納品を目安にしつつ、クオリティ優先というご意向を踏まえ、無理のない工程で仕上げの精度を最優先いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">What Kairos Offers</span>
+      <h2>Kairosがご提供できる価値</h2>
+      <p>制作だけで終わらない、貴社の「伝える力」を育てる伴走をお約束します。</p>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <span class="idx">I.</span>
+        <h3>プラットフォーム選定と移管</h3>
+        <p>WordPress／WIXを機能・運用性・コストで比較検討し、貴社に最適な形をご提案。独自ドメインとの連結作業まで一括対応します。</p>
+      </div>
+      <div class="value-card">
+        <span class="idx">II.</span>
+        <h3>「会社らしさ」を仕立てるデザイン</h3>
+        <p>OEMという縁の下の力持ちの誠実さと技術力を、色・余白・タイポグラフィで丁寧に表現。派手さより信頼感を優先したトーンで設計します。</p>
+      </div>
+      <div class="value-card">
+        <span class="idx">III.</span>
+        <h3>必要ページの過不足ない構築</h3>
+        <p>トップ／商品紹介／会社紹介／地図／お問い合わせ／採用情報／会社概要／利用規約まで、B2Bに必要な情報設計を過不足なく実装します。</p>
+      </div>
+      <div class="value-card">
+        <span class="idx">IV.</span>
+        <h3>公開後も自走できる運用設計</h3>
+        <p>納品後、社内ご担当者様がご自身で更新できるよう管理画面を分かりやすく設計し、簡単な操作レクチャーも行います。</p>
+      </div>
+      <div class="value-card">
+        <span class="idx">V.</span>
+        <h3>柔軟なスケジュール調整</h3>
+        <p>10月中納品を軸としながら、品質を優先するご意向に合わせて工程を調整。無理な巻き取りをせず、丁寧な検品期間を確保します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pages-wrap">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Page Structure</span>
+      <h2>ご提示いただいた必要ページ</h2>
+      <p>この構成を土台に、貴社の情報量とご予算に合わせて最終調整いたします。</p>
+    </div>
+    <div class="chip-row">
+      <span class="chip">トップページ</span>
+      <span class="chip">商品紹介</span>
+      <span class="chip">会社紹介</span>
+      <span class="chip">地図</span>
+      <span class="chip">お問い合わせ</span>
+      <span class="chip">採用情報</span>
+      <span class="chip">会社概要</span>
+      <span class="chip">利用規約</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Process</span>
+      <h2>制作の進め方（縫製工程になぞらえて）</h2>
+      <p>採寸から検品まで、一つひとつの工程を確認しながら進めます。</p>
+    </div>
+    <div class="process-line">
+      <div class="process-list">
+        <div class="process-item">
+          <span class="step">STEP 01</span>
+          <h4>採寸・ヒアリング</h4>
+          <p>要件整理／必要ページとご要望の確認</p>
+        </div>
+        <div class="process-item">
+          <span class="step">STEP 02</span>
+          <h4>型紙・設計</h4>
+          <p>サイトマップ／ワイヤーフレーム作成</p>
+        </div>
+        <div class="process-item">
+          <span class="step">STEP 03</span>
+          <h4>仮縫い・デザイン</h4>
+          <p>トップページデザイン案のご確認</p>
+        </div>
+        <div class="process-item">
+          <span class="step">STEP 04</span>
+          <h4>本縫い・実装</h4>
+          <p>全ページ構築／ドメイン連結作業</p>
+        </div>
+        <div class="process-item">
+          <span class="step">STEP 05</span>
+          <h4>仕上げ・検品</h4>
+          <p>表示確認／レスポンシブ調整／修正対応</p>
+        </div>
+        <div class="process-item">
+          <span class="step">STEP 06</span>
+          <h4>納品</h4>
+          <p>公開作業／運用レクチャー</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container closing-inner">
+    <span class="section-label" style="color:var(--brass);">Next Action</span>
+    <h2>まずは生地見本を選ぶように、<br>気軽にご相談ください。</h2>
+    <p>
+      ご予算15〜20万円の中で、クオリティを最優先した最適なご提案をお見積りいたします。
+      参考サイトのイメージが定まっていなくても、ヒアリングの中で一緒に形にしていきますので、
+      お気軽にお声がけください。
+    </p>
+    <a href="#" class="cta-btn"><span class="btn-deco"></span> Kairosに見積もりを相談する</a>
+  </div>
+</section>
+
+<footer>
+  <div class="stitch-divider"><div class="line" style="max-width:120px;"></div></div>
+  © Kairos — Web制作・システム開発チーム
+</footer>
+
+</body>
+</html>
